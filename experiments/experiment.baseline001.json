@@ -1,6 +1,6 @@
 {
   "id": "baseline_001",
-  "name": "Baseline run including only inline executions",
+  "name": "Baseline comparison of context access and provisioning strategies over Lattes curricula",
   "output": "outputs",
   "dataset": "datasets/lattes",
   "models": {
