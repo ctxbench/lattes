@@ -1,0 +1,305 @@
+{
+  "datasetId": "lattes-v2",
+  "referenceDate": "2026-04-28",
+  "instances": [
+    {
+      "instanceId": "2342739419247924",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Uso de DevSecOps em sistemas com aprendizado de máquina"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "3457219624656691",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Inteligência Artificial Generativa para Serviços de Saúde"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "3909162572623711",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Métodos e Algoritmos para Análise de Dados Simbólicos"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "3957046121364560",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Estruturas e Algoritmos em Teoria dos Grafos Algoritmos e Aplicações"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "4093653182381054",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Análise exploratória visual de dados em diferentes domínios"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "4208603228366576",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Investigação sobre a representação da significação em diferentes modelos teóricos linguísticos"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "5123602572479168",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Execução Paralela de Aplicações de Bioinformática em Plataformas de Alto Desempenho"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "5521922960404236",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Desenvolvimento de aplicações para IoT"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "5660469902738038",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Estudo e avaliação de arquiteturas distribuídas"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "6682919653508224",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Sistemas de Recomendação para Manutenção Colaborativa de Software"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "7227955029154651",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Engenharia de software aplicada ao desenvolvimento de sistemas de inteligencia artificial"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "9039182932747194",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Plataforma de Agentes Inteligentes"
+          }
+        }
+      ]
+    },
+    {
+      "instanceId": "9674541381385819",
+      "questions": [
+        {
+          "id": "q_pubyear",
+          "parameters": {
+            "pub_year": 2024
+          }
+        },
+        {
+          "id": "q_projfit_1",
+          "parameters": {
+            "project": "Novos e velhos atores para estratégias terapêuticas em nefropatias: terapias celulares, acelulares e farmacológicas"
+          }
+        },
+        {
+          "id": "q_projfit_2",
+          "parameters": {
+            "project": "Execução Paralela de Aplicações de Bioinformática em Plataformas de Alto Desempenho"
+          }
+        }
+      ]
+    }
+  ]
+}
