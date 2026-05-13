@@ -9,6 +9,8 @@ from pathlib import Path
 DATASET_NAME = "ctxbench-lattes"
 DATASET_ID = "ctxbench/lattes"
 MANIFEST_SCHEMA_VERSION = 1
+DESCRIPTOR_SCHEMA_VERSION = 1
+DEFAULT_REPOSITORY = "ctxbench/lattes"
 
 
 def sha256_file(path: Path) -> str:
@@ -41,9 +43,11 @@ def add_tree(tar: tarfile.TarFile, root: Path, prefix: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="0.2.0")
+    parser.add_argument("--version", default="0.3.0")
     parser.add_argument("--src", default="datasets/lattes")
     parser.add_argument("--out", default="dist")
+    parser.add_argument("--repository", default=DEFAULT_REPOSITORY)
+    parser.add_argument("--release-tag", default=None)
     args = parser.parse_args()
 
     src_dir = Path(args.src)
@@ -67,9 +71,11 @@ def main() -> None:
         if not path.exists():
             raise SystemExit(f"Missing required path: {path}")
 
+    release_tag = args.release_tag or f"v{args.version}-dataset"
     package_root = Path(f"{DATASET_NAME}-v{args.version}")
     archive = out_dir / f"{DATASET_NAME}-v{args.version}.tar.gz"
     checksum = out_dir / f"{DATASET_NAME}-v{args.version}.sha256"
+    descriptor = out_dir / f"{DATASET_NAME}-v{args.version}.dataset.json"
 
     manifest = {
         "id": DATASET_ID,
@@ -82,14 +88,14 @@ def main() -> None:
         "layout": {
             "tasks": "questions.json",
             "taskInstances": "questions.instance.json",
-            "contextRoot": "context/"
+            "contextRoot": "context/",
         },
         "formats": [
             "raw_html",
             "clean_html",
             "parsed_json",
-            "blocks"
-        ]
+            "blocks",
+        ],
     }
 
     manifest_path = out_dir / "ctxbench.dataset.tmp.json"
@@ -112,8 +118,32 @@ def main() -> None:
     digest = sha256_file(archive)
     checksum.write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
 
+    archive_url = (
+        f"https://github.com/{args.repository}/releases/download/"
+        f"{release_tag}/{archive.name}"
+    )
+    descriptor_payload = {
+        "id": DATASET_ID,
+        "datasetVersion": args.version,
+        "descriptorSchemaVersion": DESCRIPTOR_SCHEMA_VERSION,
+        "name": "CTXBench Lattes",
+        "description": "Lattes benchmark dataset for CTXBench.",
+        "releaseTag": release_tag,
+        "archive": {
+            "type": "tar.gz",
+            "url": archive_url,
+            "sha256": digest,
+            "sizeBytes": archive.stat().st_size,
+        },
+    }
+    descriptor.write_text(
+        json.dumps(descriptor_payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
     print(f"Created {archive}")
     print(f"Created {checksum}")
+    print(f"Created {descriptor}")
 
 
 if __name__ == "__main__":

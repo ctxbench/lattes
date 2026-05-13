@@ -11,9 +11,9 @@ Usage:
 
 Examples:
   $0
-  $0 0.2.0
-  $0 0.2.0 downloads
-  $0 0.2.0 downloads v0.2.0-dataset
+  $0 0.3.0
+  $0 0.3.0 downloads
+  $0 0.3.0 downloads v0.3.0-dataset
 
 Environment variables:
   DATASET_NAME   default: ctxbench-lattes
@@ -26,12 +26,13 @@ if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   exit 0
 fi
 
-VERSION="${1:-0.2.0}"
+VERSION="${1:-0.3.0}"
 OUT_DIR="${2:-downloads}"
 TAG="${3:-v${VERSION}-dataset}"
 
 ARCHIVE="${DATASET_NAME}-v${VERSION}.tar.gz"
 CHECKSUM="${DATASET_NAME}-v${VERSION}.sha256"
+DESCRIPTOR="${DATASET_NAME}-v${VERSION}.dataset.json"
 
 BASE_URL="https://github.com/${REPOSITORY}/releases/download/${TAG}"
 
@@ -45,6 +46,10 @@ echo "  output:     ${OUT_DIR}"
 echo
 
 curl -fL \
+  "${BASE_URL}/${DESCRIPTOR}" \
+  -o "${OUT_DIR}/${DESCRIPTOR}"
+
+curl -fL \
   "${BASE_URL}/${ARCHIVE}" \
   -o "${OUT_DIR}/${ARCHIVE}"
 
@@ -54,8 +59,12 @@ curl -fL \
 
 echo
 echo "Downloaded:"
+echo "  ${OUT_DIR}/${DESCRIPTOR}"
 echo "  ${OUT_DIR}/${ARCHIVE}"
 echo "  ${OUT_DIR}/${CHECKSUM}"
 echo
 echo "Next step:"
 echo "  ./scripts/verify_dataset.sh ${VERSION} ${OUT_DIR}"
+echo
+echo "CTXBench descriptor fetch:"
+echo "  ctxbench dataset fetch --descriptor-file ${OUT_DIR}/${DESCRIPTOR}"
