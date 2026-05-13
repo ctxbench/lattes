@@ -7,6 +7,8 @@ import tarfile
 from pathlib import Path
 
 DATASET_NAME = "ctxbench-lattes"
+DATASET_ID = "ctxbench/lattes"
+MANIFEST_SCHEMA_VERSION = 1
 
 
 def sha256_file(path: Path) -> str:
@@ -39,7 +41,7 @@ def add_tree(tar: tarfile.TarFile, root: Path, prefix: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="0.1.0")
+    parser.add_argument("--version", default="0.2.0")
     parser.add_argument("--src", default="datasets/lattes")
     parser.add_argument("--out", default="dist")
     args = parser.parse_args()
@@ -70,12 +72,16 @@ def main() -> None:
     checksum = out_dir / f"{DATASET_NAME}-v{args.version}.sha256"
 
     manifest = {
-        "dataset": DATASET_NAME,
-        "version": args.version,
+        "id": DATASET_ID,
+        "datasetVersion": args.version,
+        "manifestSchemaVersion": MANIFEST_SCHEMA_VERSION,
+        "name": "CTXBench Lattes",
+        "description": "Lattes benchmark dataset for CTXBench.",
+        "domain": "academic curricula",
         "benchmark": "CTXBench",
         "layout": {
-            "questions": "questions.json",
-            "instances": "questions.instance.json",
+            "tasks": "questions.json",
+            "taskInstances": "questions.instance.json",
             "contextRoot": "context/"
         },
         "formats": [
@@ -86,14 +92,14 @@ def main() -> None:
         ]
     }
 
-    manifest_path = out_dir / "manifest.tmp.json"
+    manifest_path = out_dir / "ctxbench.dataset.tmp.json"
     manifest_path.write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
 
     with tarfile.open(archive, "w:gz", format=tarfile.PAX_FORMAT) as tar:
-        add_file(tar, manifest_path, package_root / "manifest.json")
+        add_file(tar, manifest_path, package_root / "ctxbench.dataset.json")
         add_file(tar, Path("dataset-card.md"), package_root / "dataset-card.md")
         add_file(tar, Path("DATASET-TERMS.md"), package_root / "DATASET-TERMS.md")
         add_file(tar, Path("NOTICE.md"), package_root / "NOTICE.md")

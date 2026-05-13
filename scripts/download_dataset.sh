@@ -11,9 +11,9 @@ Usage:
 
 Examples:
   $0
-  $0 0.1.0
-  $0 0.1.0 downloads
-  $0 0.1.0 downloads v0.1.0-dataset
+  $0 0.2.0
+  $0 0.2.0 downloads
+  $0 0.2.0 downloads v0.2.0-dataset
 
 Environment variables:
   DATASET_NAME   default: ctxbench-lattes
@@ -26,7 +26,7 @@ if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   exit 0
 fi
 
-VERSION="${1:-0.1.0}"
+VERSION="${1:-0.2.0}"
 OUT_DIR="${2:-downloads}"
 TAG="${3:-v${VERSION}-dataset}"
 

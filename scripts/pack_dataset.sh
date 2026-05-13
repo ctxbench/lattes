@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="${1:-0.1.0}"
+VERSION="${1:-0.2.0}"
 SRC_DIR="${2:-datasets/lattes}"
 OUT_DIR="${3:-dist}"
 
